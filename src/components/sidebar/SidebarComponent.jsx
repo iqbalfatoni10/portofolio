@@ -38,7 +38,7 @@ const SidebarComponent = () => {
                 </Link>
               </li>
               <li className="nav_item">
-                <Link to="/portofolio" className="nav_link">
+                <Link to="/porto" className="nav_link">
                   <i className="icon-layers"></i>
                 </Link>
               </li>

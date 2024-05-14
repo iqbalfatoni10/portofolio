@@ -22,7 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomeView />} />
               <Route path="about" element={<AboutView />} />
-              <Route path="portofolio" element={<PortofolioView />} />
+              <Route path="porto" element={<PortofolioView />} />
               <Route path="resume" element={<ResumeView />} />
               <Route path="ability" element={<AbilityView />} />
               <Route path="contact" element={<ContactView />} />
