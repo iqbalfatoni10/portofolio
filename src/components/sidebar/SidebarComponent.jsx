@@ -8,7 +8,7 @@ const SidebarComponent = () => {
   return (
     <>
       <aside className={toggle ? 'aside show-menu' : 'aside'}>
-        <Link to="/" className="nav_logo">
+        <Link to="/portofolio" className="nav_logo">
           <h1>
             IQ<span>.</span>
           </h1>
@@ -18,7 +18,7 @@ const SidebarComponent = () => {
           <div className="nav_menu">
             <ul className="nav_list">
               <li className="nav_item">
-                <Link to="/" className="nav_link">
+                <Link to="/portofolio" className="nav_link">
                   <i className="icon-home"></i>
                 </Link>
               </li>

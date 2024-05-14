@@ -20,7 +20,7 @@ function App() {
           </Col>
           <Col sm={11}>
             <Routes>
-              <Route path="/" element={<HomeView />} />
+              <Route path="/portofolio" element={<HomeView />} />
               <Route path="about" element={<AboutView />} />
               <Route path="porto" element={<PortofolioView />} />
               <Route path="resume" element={<ResumeView />} />
