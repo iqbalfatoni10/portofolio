@@ -9,22 +9,26 @@ import AbilityView from '../ability/AbilityView';
 import ResumeView from '../resume/ResumeView';
 import PortofolioView from '../portofolio/PortofolioView';
 import ContactView from '../contact/ContactView';
-import ButtonComponent from '../../components/button/ButtonComponent';
+import { Fade, Slide } from 'react-awesome-reveal';
 
 const HomeView = () => {
   return (
     <>
       <section id="home" className="home container">
         <div className="intro">
-          <div className="profil-lingkaran">
-            <img src={Profil} alt="" className="home_img" />
-          </div>
-          <h1 className="home_name">Moh. Iqbal Fatoni</h1>
-          <span className="home_education">Front-End Developer</span>
-          <SocialView />
-          <AnchorLink href="#contact" className="button">
-            Hire Me
-          </AnchorLink>
+          <Fade>
+            <div className="profil-lingkaran">
+              <img src={Profil} alt="" className="home_img" />
+            </div>
+            <h1 className="home_name">Moh. Iqbal Fatoni</h1>
+            <span className="home_education">Front-End Developer</span>
+            <SocialView />
+          </Fade>
+          <Slide>
+            <AnchorLink href="#contact" className="button">
+              Hire Me
+            </AnchorLink>
+          </Slide>
           <ScrollDown />
         </div>
         <ShapesComponent />

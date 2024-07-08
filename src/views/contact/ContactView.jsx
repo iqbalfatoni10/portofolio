@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './contact.css';
 import Swal from 'sweetalert2';
+import { Fade, Flip, Slide, JackInTheBox } from 'react-awesome-reveal';
 
 const ContactView = () => {
   const form = useRef();
@@ -35,34 +36,48 @@ const ContactView = () => {
 
   return (
     <section id="contact" className="contact container section">
-      <h2 className="section_title">Get In Touch</h2>
+      <Fade>
+        <h2 className="section_title">Get In Touch</h2>
+      </Fade>
 
       <div className="contact_container grid">
-        <div className="contact_info">
-          <h3 className="contact_title">Let's talk about everything!</h3>
-          <p className="contact_details">Don't like forms? Send me an email. 👋</p>
-        </div>
+        <Flip>
+          <div className="contact_info">
+            <h3 className="contact_title">Let's talk about everything!</h3>
+            <p className="contact_details">Don't like forms? Send me an email. 👋</p>
+          </div>
+        </Flip>
 
         <form className="contact_form" ref={form} onSubmit={sendEmail}>
           <div className="contact_form-group">
+            <Slide>
+              <div className="contact_form-div">
+                <input type="text" name="user_name" id="name" className="contact_form-input" placeholder="Insert your name" />
+              </div>
+            </Slide>
+
+            <Slide>
+              <div className="contact_form-div">
+                <input type="email" name="user_email" id="email" className="contact_form-input" placeholder="Insert your email" />
+              </div>
+            </Slide>
+          </div>
+
+          <Slide>
             <div className="contact_form-div">
-              <input type="text" name="user_name" id="name" className="contact_form-input" placeholder="Insert your name" />
+              <input type="text" name="user_subject" id="subject" className="contact_form-input" placeholder="Insert your subject" />
             </div>
+          </Slide>
 
-            <div className="contact_form-div">
-              <input type="email" name="user_email" id="email" className="contact_form-input" placeholder="Insert your email" />
+          <Slide>
+            <div className="contact_form-div contact_form-area">
+              <textarea name="message" id="message" className="contact_form-input" placeholder="Write your message"></textarea>
             </div>
-          </div>
+          </Slide>
 
-          <div className="contact_form-div">
-            <input type="text" name="user_subject" id="subject" className="contact_form-input" placeholder="Insert your subject" />
-          </div>
-
-          <div className="contact_form-div contact_form-area">
-            <textarea name="message" id="message" className="contact_form-input" placeholder="Write your message"></textarea>
-          </div>
-
-          <input type="submit" value="Send Message" className="button" style={{ textDecoration: 'none', color: '#fff', border: 'none' }} />
+          <JackInTheBox>
+            <input type="submit" value="Send Message" className="button" style={{ textDecoration: 'none', color: '#fff', border: 'none' }} />
+          </JackInTheBox>
         </form>
       </div>
     </section>

@@ -2,6 +2,7 @@ import './ability.css';
 import Image1 from '../../assets/ability-1.svg';
 import Image2 from '../../assets/ability-2.svg';
 import Image3 from '../../assets/ability-3.svg';
+import { Fade, Bounce } from 'react-awesome-reveal';
 
 const data = [
   {
@@ -27,14 +28,19 @@ const data = [
 const AbilityView = () => {
   return (
     <section id="ability" className="ability container section">
-      <h2 className="section_title">Ability</h2>
+      <Fade>
+        <h2 className="section_title">Ability</h2>
+      </Fade>
+
       <div className="ability_container grid">
         {data.map(({ id, image, title, description }) => {
           return (
             <div className="ability_card" key={id}>
-              <img src={image} alt="" className="ability_img" />
-              <h3 className="ability_title">{title}</h3>
-              <p className="ability_description">{description}</p>
+              <Bounce>
+                <img src={image} alt="" className="ability_img" />
+                <h3 className="ability_title">{title}</h3>
+                <p className="ability_description">{description}</p>
+              </Bounce>
             </div>
           );
         })}
