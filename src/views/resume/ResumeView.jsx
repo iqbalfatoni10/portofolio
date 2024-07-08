@@ -4,7 +4,7 @@ import Card from './Card';
 
 const ResumeView = () => {
   return (
-    <section className="resume container section">
+    <section id="resume" className="resume container section">
       <h2 className="section_title">Experience</h2>
 
       <div className="resume_container grid">

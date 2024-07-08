@@ -1,4 +1,5 @@
 import { Outlet, Link } from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import './sidebar.css';
 import { useState } from 'react';
 
@@ -8,44 +9,44 @@ const SidebarComponent = () => {
   return (
     <>
       <aside className={toggle ? 'aside show-menu' : 'aside'}>
-        <Link to="/portofolio" className="nav_logo">
+        <AnchorLink href="#home" className="nav_logo">
           <h1>
             IQ<span>.</span>
           </h1>
-        </Link>
+        </AnchorLink>
 
         <nav className="nav">
           <div className="nav_menu">
             <ul className="nav_list">
               <li className="nav_item">
-                <Link to="/portofolio" className="nav_link">
+                <AnchorLink href="#home" className="nav_link">
                   <i className="icon-home"></i>
-                </Link>
+                </AnchorLink>
               </li>
               <li className="nav_item">
-                <Link to="/about" className="nav_link">
+                <AnchorLink href="#about" className="nav_link">
                   <i className="icon-user-following"></i>
-                </Link>
+                </AnchorLink>
               </li>
               <li className="nav_item">
-                <Link to="/ability" className="nav_link">
+                <AnchorLink href="#ability" className="nav_link">
                   <i className="icon-briefcase"></i>
-                </Link>
+                </AnchorLink>
               </li>
               <li className="nav_item">
-                <Link to="/resume" className="nav_link">
+                <AnchorLink href="#resume" className="nav_link">
                   <i className="icon-graduation"></i>
-                </Link>
+                </AnchorLink>
               </li>
               <li className="nav_item">
-                <Link to="/porto" className="nav_link">
+                <AnchorLink href="#porto" className="nav_link">
                   <i className="icon-layers"></i>
-                </Link>
+                </AnchorLink>
               </li>
               <li className="nav_item">
-                <Link to="/contact" className="nav_link">
+                <AnchorLink href="#contact" className="nav_link">
                   <i className="icon-bubble"></i>
-                </Link>
+                </AnchorLink>
               </li>
             </ul>
           </div>

@@ -26,7 +26,7 @@ const data = [
 
 const AbilityView = () => {
   return (
-    <section className="ability container section">
+    <section id="ability" className="ability container section">
       <h2 className="section_title">Ability</h2>
       <div className="ability_container grid">
         {data.map(({ id, image, title, description }) => {

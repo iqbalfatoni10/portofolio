@@ -34,7 +34,7 @@ const ContactView = () => {
   };
 
   return (
-    <section className="contact container section">
+    <section id="contact" className="contact container section">
       <h2 className="section_title">Get In Touch</h2>
 
       <div className="contact_container grid">

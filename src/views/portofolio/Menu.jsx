@@ -11,36 +11,42 @@ const Menu = [
     image: Work1,
     title: 'Aplikasi Route Wise',
     category: 'Web Development',
+    link: 'https://github.com/iqbalfatoni10/Route-Wise',
   },
   {
     id: 2,
     image: Work2,
     title: 'Merancang Database APK Route Wise',
     category: 'Database Administrator',
+    link: '',
   },
   {
     id: 3,
     image: Work3,
     title: 'Analisis Data Performa Penjualan',
     category: 'Data Analyst',
+    link: '',
   },
   {
     id: 4,
     image: Work4,
     title: 'SPK Methode Promethee',
     category: 'Web Development',
+    link: '',
   },
   {
     id: 5,
     image: Work5,
     title: 'Merancang Database SPK Metode Promethee',
     category: 'Database Administrator',
+    link: '',
   },
   {
     id: 6,
     image: Work6,
     title: 'Analisis Data Produk Penjualan',
     category: 'Data Analyst',
+    link: '',
   },
 ];
 

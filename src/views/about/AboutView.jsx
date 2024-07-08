@@ -7,7 +7,7 @@ import ButtonComponent from '../../components/button/ButtonComponent';
 const AboutView = () => {
   return (
     <div>
-      <section className="about container section">
+      <section id="about" className="about container section">
         <h2 className="section_title">About Me</h2>
 
         <div className="about_container grid">
@@ -23,7 +23,6 @@ const AboutView = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">HTML</h3>
-                  <span className="skills_number">90%</span>
                 </div>
                 <div className="skills_bar">
                   <span className="skills_percentage html"></span>
@@ -33,7 +32,6 @@ const AboutView = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">CSS</h3>
-                  <span className="skills_number">80%</span>
                 </div>
                 <div className="skills_bar">
                   <span className="skills_percentage css"></span>
@@ -43,7 +41,6 @@ const AboutView = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">JAVASCRIPT</h3>
-                  <span className="skills_number">80%</span>
                 </div>
                 <div className="skills_bar">
                   <span className="skills_percentage javascript"></span>
@@ -53,7 +50,6 @@ const AboutView = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">VUE JS</h3>
-                  <span className="skills_number">70%</span>
                 </div>
                 <div className="skills_bar">
                   <span className="skills_percentage vue"></span>
@@ -62,11 +58,28 @@ const AboutView = () => {
 
               <div className="skills_data">
                 <div className="skills_titles">
-                  <h3 className="skills_name">REACT</h3>
-                  <span className="skills_number">70%</span>
+                  <h3 className="skills_name">REACT JS</h3>
                 </div>
                 <div className="skills_bar">
                   <span className="skills_percentage react"></span>
+                </div>
+              </div>
+
+              <div className="skills_data">
+                <div className="skills_titles">
+                  <h3 className="skills_name">EXPRESS JS</h3>
+                </div>
+                <div className="skills_bar">
+                  <span className="skills_percentage express"></span>
+                </div>
+              </div>
+
+              <div className="skills_data">
+                <div className="skills_titles">
+                  <h3 className="skills_name">LARAVEL</h3>
+                </div>
+                <div className="skills_bar">
+                  <span className="skills_percentage laravel"></span>
                 </div>
               </div>
             </div>
