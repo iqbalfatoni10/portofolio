@@ -22,7 +22,7 @@ const AboutView = () => {
           <div className="about_data grid">
             <JackInTheBox>
               <div className="about_info">
-                <p className="about_description">Saya Moh. Iqbal Fatoni, mahasiswa Politeknik Negeri Malang. Saya memiliki keahlian dibidang pengembang web khususnya Front-End Developer.</p>
+                <p className="about_description">Saya Moh. Iqbal Fatoni, mahasiswa Politeknik Negeri Malang. Saya memiliki keahlian dibidang pengembang web khususnya Frontend Web Developer.</p>
                 <ButtonComponent className="button" redirect="https://drive.google.com/drive/folders/1SA9bzYPKCG4-Y6AEkNwkXLdVPMgzor2z?usp=sharing" text="Download CV" />
               </div>
             </JackInTheBox>

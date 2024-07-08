@@ -21,7 +21,7 @@ const HomeView = () => {
               <img src={Profil} alt="" className="home_img" />
             </div>
             <h1 className="home_name">Moh. Iqbal Fatoni</h1>
-            <span className="home_education">Front-End Developer</span>
+            <span className="home_education">Frontend Web Developer</span>
             <SocialView />
           </Fade>
           <Slide>
