@@ -97,6 +97,29 @@
   transform: translateY(0);
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination_button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.pagination_button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.pagination_button:hover {
+  background-color: #ddd;
+}
+
 @media screen and (max-width: 1024px) {
   .work_filters {
     justify-content: center;

@@ -5,12 +5,27 @@ import { Fade, Slide, Bounce } from 'react-awesome-reveal';
 
 const PortofolioView = () => {
   const [items, setItems] = useState(Menu);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5; // Number of items to display per page
+
   const filterItem = (categoryItem) => {
     const updateItems = Menu.filter((curElem) => {
       return curElem.category === categoryItem;
     });
-
     setItems(updateItems);
+    setCurrentPage(1); // Reset to the first page when filtering
+  };
+
+  // Calculate the indices for the current page items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -21,7 +36,13 @@ const PortofolioView = () => {
 
       <div className="work_filters">
         <Slide>
-          <span className="work_item" onClick={() => setItems(Menu)}>
+          <span
+            className="work_item"
+            onClick={() => {
+              setItems(Menu);
+              setCurrentPage(1);
+            }}
+          >
             Everything
           </span>
         </Slide>
@@ -40,10 +61,15 @@ const PortofolioView = () => {
             Database Administrator
           </span>
         </Slide>
+        <Slide>
+          <span className="work_item" onClick={() => filterItem('Mobile Application')}>
+            Mobile Application
+          </span>
+        </Slide>
       </div>
 
       <div className="work_container grid">
-        {items.map((elem) => {
+        {currentItems.map((elem) => {
           const { id, image, title, category, link } = elem;
           return (
             <div className="work_card" key={id}>
@@ -61,6 +87,14 @@ const PortofolioView = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="pagination">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button key={index + 1} onClick={() => handlePageChange(index + 1)} className={`pagination_button ${currentPage === index + 1 ? 'active' : ''}`}>
+            {index + 1}
+          </button>
+        ))}
       </div>
     </section>
   );
