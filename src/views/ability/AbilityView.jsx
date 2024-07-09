@@ -9,19 +9,19 @@ const data = [
     id: 1,
     image: Image1,
     title: 'Data Analyst',
-    description: 'Menganalisis data dengan tujuan menghasilkan wawasan bisnis yang berguna. Bekerja dengan data dari berbagai sumber seperti database, file spreadsheet, atau data streaming.',
+    description: 'Analyze data with the goal of generating useful business insights. Work with data from various sources such as databases, spreadsheet files, or streaming data.',
   },
   {
     id: 2,
     image: Image2,
     title: 'Web Development',
-    description: 'Membuat dan memelihara situs web yang mencakup pembuatan antarmuka pengguna (UI), pengembangan fitur dan fungsionalitas, serta optimalisasi kinerja situs web.',
+    description: 'Create and maintain websites which includes creating user interfaces (UI), developing features and functionality, and optimizing website performance.',
   },
   {
     id: 3,
     image: Image3,
     title: 'Database Administrator',
-    description: 'Merancang, mengelola, dan memelihara basis data. Memastikan keamanan, ketersediaan, dan integritas data dalam basis data.',
+    description: 'Design, manage and maintain databases. Ensure security, availability and integrity of data in the database.',
   },
 ];
 
