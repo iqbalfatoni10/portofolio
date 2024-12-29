@@ -31,28 +31,6 @@ const AboutView = () => {
               <Slide>
                 <div className="skills_data">
                   <div className="skills_titles">
-                    <h3 className="skills_name">HTML</h3>
-                  </div>
-                  <div className="skills_bar">
-                    <span className="skills_percentage html"></span>
-                  </div>
-                </div>
-              </Slide>
-
-              <Slide>
-                <div className="skills_data">
-                  <div className="skills_titles">
-                    <h3 className="skills_name">CSS</h3>
-                  </div>
-                  <div className="skills_bar">
-                    <span className="skills_percentage css"></span>
-                  </div>
-                </div>
-              </Slide>
-
-              <Slide>
-                <div className="skills_data">
-                  <div className="skills_titles">
                     <h3 className="skills_name">JAVASCRIPT</h3>
                   </div>
                   <div className="skills_bar">
