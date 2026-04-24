@@ -35,7 +35,7 @@ const SidebarComponent = () => {
               </li>
               <li className="nav_item">
                 <AnchorLink href="#resume" className="nav_link">
-                  <i className="icon-graduation"></i>
+                  <i className="icon-rocket"></i>
                 </AnchorLink>
               </li>
               <li className="nav_item">
@@ -52,7 +52,7 @@ const SidebarComponent = () => {
           </div>
         </nav>
         <div className="nav_footer">
-          <span className="copyright">&copy; 2024 - 2025.</span>
+          <span className="copyright">&copy; 2026 - 2027.</span>
         </div>
         <Outlet />
       </aside>

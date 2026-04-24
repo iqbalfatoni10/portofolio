@@ -1,90 +1,139 @@
 .resume_container {
-  grid-template-columns: 450px;
-  justify-content: center;
-  column-gap: 1.875rem;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-.timeline {
-  background-color: var(--container-color);
-  padding: 1.875rem;
-  border-radius: var(--border-radius);
-  position: relative;
-  box-shadow: var(--shadow);
+/* Garis Tengah Timeline */
+.timeline_line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--first-color), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline_items_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .timeline_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   position: relative;
-  padding-left: 3.125rem;
-  padding-bottom: 3.125rem;
 }
 
-.timeline_item:last-child {
-  padding-bottom: 0;
+.timeline_content_wrapper {
+  width: 45%; /* Mengambil kurang dari setengah layar */
 }
 
-.timeline_item::before {
-  content: '';
-  width: 1px;
-  height: 100%;
-  background-color: var(--first-color);
-  position: absolute;
-  left: 0.25rem;
-  top: 0;
+/* Atur posisi kiri dan kanan */
+.timeline_item.left {
+  justify-content: flex-start;
 }
 
-.timeline .icon-graduation {
-  position: absolute;
-  left: -0.4375rem;
-  top: 0;
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
-  background-color: var(--container-color);
-  padding: -0.4375rem 0;
+.timeline_item.right {
+  justify-content: flex-end;
+}
+
+/* Style Card Modern */
+.timeline_card {
+  background: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.timeline_card:hover {
+  transform: translateY(-5px);
+  border-color: var(--first-color);
+}
+
+.timeline_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
 }
 
 .timeline_date {
-  color: #8b88b1;
-  font-size: var(--small-font-size);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--first-color);
+  background: rgba(var(--first-color-rgb), 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+.timeline_icon_inner {
+  color: #ccc;
 }
 
 .timeline_title {
-  font-size: var(--h3-font-size);
-  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 1024px) {
-  .resume_container {
-    grid-template-columns: 450px;
-    justify-content: center;
-    row-gap: 1.875rem;
-  }
-
-  .timeline_item::before {
-    left: 2px;
-  }
+.timeline_text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
-@media screen and (max-width: 576px) {
-  .resume_container {
-    grid-template-columns: 1fr;
-  }
+/* Titik Tengah */
+.timeline_dot {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid var(--first-color);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
-@media screen and (max-width: 350px) {
-  .timeline_item {
-    padding-left: 1.875rem;
-    padding-bottom: 1.875rem;
+.dot_inner {
+  width: 100%;
+  height: 100%;
+  background: var(--first-color);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  opacity: 0.4;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(1); opacity: 0.4; }
+}
+
+/* --- RESPONSIVE --- */
+
+@media screen and (max-width: 768px) {
+  .timeline_line {
+    left: 20px;
   }
 
-  .timeline_item::before {
-    left: 0;
+  .timeline_dot {
+    left: 20px;
   }
 
-  .timeline .icon-graduation {
-    left: -9px;
+  .timeline_content_wrapper {
+    width: 100%;
+    padding-left: 50px;
   }
 
-  .timeline_text {
-    text-align: justify;
+  .timeline_item.left, .timeline_item.right {
+    justify-content: flex-start;
   }
 }

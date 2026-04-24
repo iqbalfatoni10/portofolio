@@ -5,16 +5,23 @@ import { Fade } from 'react-awesome-reveal';
 
 const ResumeView = () => {
   return (
-    <section id="resume" className="resume container section">
-      <Fade>
+    <section id="resume" className="resume section container">
+      <Fade triggerOnce>
         <h2 className="section_title">Experience</h2>
       </Fade>
 
-      <div className="resume_container grid">
-        <div className="timeline grid">
-          {Data.map((val, id) => {
-            return <Card key={id} icon={val.icon} title={val.title} year={val.year} desc={val.desc} />;
-          })}
+      <div className="resume_container">
+        <div className="timeline_line"></div>
+        <div className="timeline_items_wrapper">
+          {Data.map((val, index) => (
+            <Card 
+              key={val.id} 
+              index={index}
+              year={val.year} 
+              title={val.title} 
+              desc={val.desc} 
+            />
+          ))}
         </div>
       </div>
     </section>

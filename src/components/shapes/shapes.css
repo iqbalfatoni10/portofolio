@@ -4,63 +4,70 @@
   top: 0;
   height: 100%;
   width: 100%;
+  z-index: -1; /* Pastikan berada di belakang konten */
+  overflow: hidden;
 }
 
 .shape {
   position: absolute;
+  opacity: 0.6; /* Membuatnya lebih soft sebagai dekorasi */
 }
 
-.s1 {
-  left: 2%;
-  top: 10%;
+.shape {
+  will-change: transform;
+  pointer-events: none; /* Agar tidak mengganggu kursor user */
 }
 
-.s2 {
-  left: 18%;
-  top: 30%;
+/* --- Variasi Animasi --- */
+
+/* 1. Efek Melayang Pelan (Up & Down) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
-.s3 {
-  left: 5%;
-  bottom: 30%;
+/* 2. Efek Berputar & Goyang */
+@keyframes rotate-shape {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  50% { transform: rotate(10deg) translate(5px, 10px); }
+  100% { transform: rotate(0deg) translate(0, 0); }
 }
 
-.s4 {
-  left: 2%;
-  bottom: 10%;
+/* 3. Efek Denyut Halus (Scale) */
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 0.4; }
 }
 
-.s5 {
-  left: 44%;
-  top: 10%;
+/* --- Penerapan pada Class --- */
+
+.s1, .s5, .s9 {
+  animation: float 6s ease-in-out infinite;
 }
 
-.s6 {
-  left: 36%;
-  bottom: 10%;
+.s2, .s7, .s10 {
+  animation: rotate-shape 8s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
-.s7 {
-  top: 20%;
-  right: 25%;
+.s3, .s6, .s11 {
+  animation: pulse-soft 5s ease-in-out infinite;
+  animation-delay: 2s;
 }
 
-.s8 {
-  right: 24%;
-  bottom: 20%;
+.s4, .s8 {
+  animation: float 7s ease-in-out infinite reverse;
 }
 
-.s9 {
-  right: 2%;
-  top: 10%;
-}
-
-.s10 {
-  top: 45%;
-  right: 11%;
-}
-
-.s11 {
-  bottom: 10%;
-  right: 2%;
-}
+/* --- Koordinat Posisi (Tetap gunakan yang lama) --- */
+.s1 { left: 2%; top: 10%; }
+.s2 { left: 18%; top: 30%; }
+.s3 { left: 5%; bottom: 30%; }
+.s4 { left: 2%; bottom: 10%; }
+.s5 { left: 44%; top: 10%; }
+.s6 { left: 36%; bottom: 10%; }
+.s7 { top: 20%; right: 25%; }
+.s8 { right: 24%; bottom: 20%; }
+.s9 { right: 2%; top: 10%; }
+.s10 { top: 45%; right: 11%; }
+.s11 { bottom: 10%; right: 2%; }

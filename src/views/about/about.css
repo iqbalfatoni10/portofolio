@@ -1,193 +1,175 @@
+/* Layout Utama */
 .about_container {
-  grid-template-columns: 3fr 9fr;
-  column-gap: 1.875rem;
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.about_data {
-  padding: 1.875rem;
-  background-color: var(--container-color);
+.profil-lingkaran {
+  width: 300px;
+  height: 300px;
+  border-radius: 30px; /* Modern rounded square atau 50% untuk lingkaran */
+  overflow: hidden;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.profil-lingkaran:hover {
+  transform: translateY(-10px);
+}
+
+.about_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Info */
+.about_info_card {
+  background: var(--container-color);
+  padding: 2rem;
+  border-radius: 20px;
   box-shadow: var(--shadow);
-  border-radius: var(--border-radius);
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.875rem;
-  align-items: flex-start;
-  position: relative;
-}
-
-.about_data::before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 15px solid var(--container-color);
-  position: absolute;
-  left: -0.93rem;
-  top: 20%;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .about_description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Skills Section (Pengganti Progress Bar) */
+.skills_subtitle {
   margin-bottom: 1rem;
-  text-align: justify;
+  font-weight: var(--font-semi-bold);
+  font-size: 1.2rem;
 }
 
-.about_skills {
-  row-gap: 1.25rem;
-}
-
-.skills_titles {
+.skills_list {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.skills_name {
-  font-size: var(--normal-font-size);
+.skill_item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.skill_item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  border-color: var(--first-color);
+}
+
+.skill_icon {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill_name {
+  font-size: 0.9rem;
   font-weight: var(--font-medium);
 }
 
-.skills_number {
-  line-height: 1.2;
-}
-
-.skills_bar,
-.skills_percentage {
-  height: 7px;
-  border-radius: 0.25rem;
-}
-
-.skills_bar {
-  background-color: #f1f1f1;
-}
-
-.skills_percentage {
-  display: block;
-  background-color: var(--first-color);
-}
-
-.javascript {
-  width: 85%;
-  background-color: rgb(255, 209, 92);
-}
-
-.php {
-  width: 65%;
-  background-color: rgb(92, 190, 255);
-}
-
-.vue {
-  width: 70%;
-  background-color: rgb(0, 223, 41);
-}
-
-.react {
-  width: 80%;
-  background-color: rgb(0, 123, 255);
-}
-
-.express {
-  width: 65%;
-  background-color: black;
-}
-
-.laravel {
-  width: 70%;
-  background-color: rgb(252, 45, 3);
+/* Stats Section (AboutBox) */
+.stats_section {
+  margin-top: 5rem;
 }
 
 .about_boxes {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 1.875rem;
-  margin-top: 4.35rem;
+  gap: 1.5rem;
 }
 
 .about_box {
-  display: flex;
-  column-gap: 1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
 }
 
-.about_icon {
-  font-size: var(--h1-font-size);
-  color: #dedeea;
+.about_box:hover {
+  background: var(--first-color);
 }
 
-.about_title {
-  font-size: 1.875rem;
+.about_box:hover .about_icon,
+.about_box:hover .about_title,
+.about_box:hover .about_subtitle {
+  color: white;
 }
 
-@media screen and (max-width: 1024px) {
+/* --- RESPONSIVE DESIGN --- */
+
+/* Large Screen (Desktop) */
+@media screen and (max-width: 1200px) {
   .about_container {
-    grid-template-columns: 720px;
-    justify-content: center;
-    row-gap: 1.875rem;
+    gap: 2rem;
   }
+}
 
-  .about_data::before {
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #fff;
-    left: 49%;
-    top: -20px;
+/* Medium Screen (Tablet) */
+@media screen and (max-width: 992px) {
+  .about_container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .profil-lingkaran {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
     margin: 0 auto;
+    width: 250px;
+    height: 250px;
   }
 
-  .about_img {
-    justify-self: center;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.about_box {
-  flex-direction: column;
-  row-gap: 0.5rem;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .about_container {
-    grid-template-columns: 350px;
+  .about_description {
+    text-align: center;
   }
 
-  .about_data::before {
-    left: 47%;
-  }
-
-  .about_data {
-    grid-template-columns: 1fr;
-    row-gap: 1.875rem;
+  .skills_list {
+    justify-content: center;
   }
 
   .about_boxes {
-    grid-template-columns: repeat(2, 150px);
-    row-gap: 1.5rem;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Small Screen (Mobile) */
 @media screen and (max-width: 576px) {
   .about_container {
-    grid-template-columns: 320px;
+    padding: 0 1rem;
   }
 
   .profil-lingkaran {
-    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
   }
-}
 
-@media screen and (max-width: 350px) {
-  .about_container {
-    grid-template-columns: 1fr;
+  .about_info_card {
+    padding: 1.5rem;
   }
 
   .about_boxes {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack statistik ke bawah agar tidak sempit */
+  }
+
+  .skill_item {
+    width: 100%; /* Skill full width di mobile agar mudah dibaca */
+    justify-content: center;
   }
 }
